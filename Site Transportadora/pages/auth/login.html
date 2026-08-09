@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Entre na plataforma para gerenciar seus transportes e cargas."
+    >
+
+    <title>Entrar | Frete de Retorno</title>
+
+    <!-- CSS global -->
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+
+    <!-- CSS específico da autenticação -->
+    <link rel="stylesheet" href="../../css/auth.css">
+
+</head>
+
+
+<body class="auth-page">
+
+    <!-- =====================================================
+         CABEÇALHO
+    ====================================================== -->
+
+    <header class="auth-header">
+
+        <div class="container auth-header-container">
+
+            <a
+                href="../../index.html"
+                class="brand"
+                aria-label="Frete de Retorno - Início"
+            >
+
+                <div class="brand-logo" aria-hidden="true">
+                    🚚
+                </div>
+
+                <span class="brand-name">
+                    Frete de Retorno
+                </span>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+    ====================================================== -->
+
+    <main class="auth-main">
+
+        <div class="auth-container">
+
+            <!-- Área de apresentação -->
+
+            <section class="auth-intro">
+
+                <span class="section-label">
+                    Bem-vindo de volta
+                </span>
+
+                <h1>
+                    Transporte de forma
+                    mais inteligente.
+                </h1>
+
+                <p>
+                    Acesse sua conta para acompanhar suas cargas,
+                    encontrar oportunidades de transporte e gerenciar
+                    suas operações.
+                </p>
+
+                <div class="auth-intro-features">
+
+                    <div class="auth-feature">
+
+                        <span class="auth-feature-icon">
+                            ✓
+                        </span>
+
+                        <span>
+                            Gerencie seus transportes
+                        </span>
+
+                    </div>
+
+                    <div class="auth-feature">
+
+                        <span class="auth-feature-icon">
+                            ✓
+                        </span>
+
+                        <span>
+                            Acompanhe suas oportunidades
+                        </span>
+
+                    </div>
+
+                    <div class="auth-feature">
+
+                        <span class="auth-feature-icon">
+                            ✓
+                        </span>
+
+                        <span>
+                            Tenha suas informações organizadas
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Formulário -->
+
+            <section class="auth-card">
+
+                <div class="auth-card-header">
+
+                    <h2>
+                        Entrar
+                    </h2>
+
+                    <p>
+                        Acesse sua conta para continuar.
+                    </p>
+
+                </div>
+
+
+                <form
+                    id="loginForm"
+                    class="auth-form"
+                    novalidate
+                >
+
+                    <!-- E-mail -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            E-mail
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="seu@email.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                        <span
+                            class="form-error"
+                            id="emailError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- Senha -->
+
+                    <div class="form-group">
+
+                        <div class="form-label-row">
+
+                            <label for="password">
+                                Senha
+                            </label>
+
+                            <a
+                                href="#"
+                                class="forgot-password"
+                                id="forgotPassword"
+                            >
+                                Esqueci minha senha
+                            </a>
+
+                        </div>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Digite sua senha"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="passwordToggle"
+                                aria-label="Mostrar senha"
+                            >
+                                Mostrar
+                            </button>
+
+                        </div>
+
+                        <span
+                            class="form-error"
+                            id="passwordError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- Lembrar -->
+
+                    <div class="form-checkbox">
+
+                        <input
+                            type="checkbox"
+                            id="remember"
+                            name="remember"
+                        >
+
+                        <label for="remember">
+                            Lembrar de mim
+                        </label>
+
+                    </div>
+
+
+                    <!-- Mensagem -->
+
+                    <div
+                        class="form-message"
+                        id="loginMessage"
+                        role="alert"
+                    ></div>
+
+
+                    <!-- Botão -->
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary btn-large auth-submit"
+                    >
+                        Entrar
+                    </button>
+
+                </form>
+
+
+                <!-- Cadastro -->
+
+                <div class="auth-divider">
+
+                    <span>
+                        ou
+                    </span>
+
+                </div>
+
+
+                <div class="auth-register">
+
+                    <p>
+                        Ainda não possui uma conta?
+                    </p>
+
+                    <a
+                        href="cadastro.html"
+                        class="btn btn-outline auth-register-button"
+                    >
+                        Criar minha conta
+                    </a>
+
+                </div>
+
+
+                <div class="auth-back">
+
+                    <a href="../../index.html">
+                        ← Voltar para a página inicial
+                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="auth-footer">
+
+        <p>
+            © 2026 Frete de Retorno. Todos os direitos reservados.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+
+    <script src="../../js/auth.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Crie sua conta na plataforma Frete de Retorno."
+    >
+
+    <title>Criar conta | Frete de Retorno</title>
+
+    <!-- CSS global -->
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+
+    <!-- CSS específico -->
+    <link rel="stylesheet" href="../../css/auth.css">
+
+</head>
+
+
+<body class="auth-page">
+
+    <!-- =====================================================
+         CABEÇALHO
+    ====================================================== -->
+
+    <header class="auth-header">
+
+        <div class="container auth-header-container">
+
+            <a
+                href="../../index.html"
+                class="brand"
+                aria-label="Frete de Retorno - Início"
+            >
+
+                <div class="brand-logo" aria-hidden="true">
+                    🚚
+                </div>
+
+                <span class="brand-name">
+                    Frete de Retorno
+                </span>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTEÚDO
+    ====================================================== -->
+
+    <main class="auth-main">
+
+        <div class="auth-container auth-container-register">
+
+
+            <!-- Introdução -->
+
+            <section class="auth-intro">
+
+                <span class="section-label">
+                    Faça parte
+                </span>
+
+                <h1>
+                    Comece a aproveitar
+                    melhor suas rotas.
+                </h1>
+
+                <p>
+                    Crie sua conta gratuitamente e conecte-se a
+                    oportunidades de transporte.
+                </p>
+
+
+                <div class="profile-preview">
+
+                    <div class="profile-preview-item">
+
+                        <div class="profile-preview-icon">
+                            📦
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Cliente
+                            </strong>
+
+                            <span>
+                                Precisa transportar uma carga.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-preview-item">
+
+                        <div class="profile-preview-icon">
+                            🚚
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Transportador
+                            </strong>
+
+                            <span>
+                                Possui espaço disponível.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 FORMULÁRIO
+            ================================================== -->
+
+            <section class="auth-card register-card">
+
+                <div class="auth-card-header">
+
+                    <h2>
+                        Criar conta
+                    </h2>
+
+                    <p>
+                        Preencha seus dados para começar.
+                    </p>
+
+                </div>
+
+
+                <form
+                    id="registerForm"
+                    class="auth-form"
+                    novalidate
+                >
+
+
+                    <!-- =================================================
+                         TIPO DE USUÁRIO
+                    ================================================== -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Como você pretende utilizar a plataforma?
+                        </label>
+
+                        <div class="profile-options">
+
+
+                            <!-- Cliente -->
+
+                            <label
+                                class="profile-option"
+                                for="profileClient"
+                            >
+
+                                <input
+                                    type="radio"
+                                    id="profileClient"
+                                    name="profile"
+                                    value="cliente"
+                                    required
+                                >
+
+                                <span class="profile-option-content">
+
+                                    <span class="profile-option-icon">
+                                        📦
+                                    </span>
+
+                                    <span class="profile-option-text">
+
+                                        <strong>
+                                            Cliente
+                                        </strong>
+
+                                        <small>
+                                            Quero transportar cargas.
+                                        </small>
+
+                                    </span>
+
+                                </span>
+
+                            </label>
+
+
+                            <!-- Transportador -->
+
+                            <label
+                                class="profile-option"
+                                for="profileCarrier"
+                            >
+
+                                <input
+                                    type="radio"
+                                    id="profileCarrier"
+                                    name="profile"
+                                    value="transportador"
+                                    required
+                                >
+
+                                <span class="profile-option-content">
+
+                                    <span class="profile-option-icon">
+                                        🚚
+                                    </span>
+
+                                    <span class="profile-option-text">
+
+                                        <strong>
+                                            Transportador
+                                        </strong>
+
+                                        <small>
+                                            Quero oferecer espaço.
+                                        </small>
+
+                                    </span>
+
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                        <span
+                            class="form-error"
+                            id="profileError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         NOME
+                    ================================================== -->
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Nome
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Seu nome"
+                            autocomplete="name"
+                            required
+                        >
+
+                        <span
+                            class="form-error"
+                            id="nameError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         E-MAIL
+                    ================================================== -->
+
+                    <div class="form-group">
+
+                        <label for="registerEmail">
+                            E-mail
+                        </label>
+
+                        <input
+                            type="email"
+                            id="registerEmail"
+                            name="email"
+                            placeholder="seu@email.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                        <span
+                            class="form-error"
+                            id="registerEmailError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         TELEFONE
+                    ================================================== -->
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Telefone
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="(00) 00000-0000"
+                            autocomplete="tel"
+                        >
+
+                    </div>
+
+
+                    <!-- =================================================
+                         SENHA
+                    ================================================== -->
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="registerPassword">
+                                Senha
+                            </label>
+
+                            <input
+                                type="password"
+                                id="registerPassword"
+                                name="password"
+                                placeholder="Crie uma senha"
+                                autocomplete="new-password"
+                                required
+                            >
+
+                            <span
+                                class="form-error"
+                                id="registerPasswordError"
+                            ></span>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="confirmPassword">
+                                Confirmar senha
+                            </label>
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                placeholder="Repita a senha"
+                                autocomplete="new-password"
+                                required
+                            >
+
+                            <span
+                                class="form-error"
+                                id="confirmPasswordError"
+                            ></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         TERMOS
+                    ================================================== -->
+
+                    <div class="form-checkbox terms-checkbox">
+
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            name="terms"
+                            required
+                        >
+
+                        <label for="terms">
+
+                            Concordo com os
+                            <a href="#">
+                                termos de uso
+                            </a>
+                            e a
+                            <a href="#">
+                                política de privacidade
+                            </a>.
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- Mensagem -->
+
+                    <div
+                        class="form-message"
+                        id="registerMessage"
+                        role="alert"
+                    ></div>
+
+
+                    <!-- Botão -->
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary btn-large auth-submit"
+                    >
+                        Criar minha conta
+                    </button>
+
+                </form>
+
+
+                <!-- Login -->
+
+                <div class="auth-divider">
+
+                    <span>
+                        ou
+                    </span>
+
+                </div>
+
+
+                <div class="auth-register">
+
+                    <p>
+                        Já possui uma conta?
+                    </p>
+
+                    <a
+                        href="login.html"
+                        class="btn btn-outline auth-register-button"
+                    >
+                        Entrar na minha conta
+                    </a>
+
+                </div>
+
+
+                <div class="auth-back">
+
+                    <a href="../../index.html">
+                        ← Voltar para a página inicial
+                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="auth-footer">
+
+        <p>
+            © 2026 Frete de Retorno. Todos os direitos reservados.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+
+    <script src="../../js/auth.js"></script>
+
+</body>
+
+</html>

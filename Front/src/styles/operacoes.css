@@ -1,0 +1,14 @@
+.operation-form {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:end;}
+.operation-form label,.operation-search {display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:#0d2d63;}
+.operation-form input,.operation-search input {width:100%;border:1px solid #cbd5e1;border-radius:9px;padding:11px 12px;background:#fff;color:#15243a;font:inherit;min-width:0;}
+.operation-form input:focus-visible,.operation-search input:focus-visible {outline:2px solid #f39c12;outline-offset:2px;}
+.operation-form button {justify-self:start;cursor:pointer;border:0;}
+.operation-feedback {font-size:13px;margin-top:14px;min-height:1em;}
+.operation-list {display:flex;flex-direction:column;gap:12px;}
+.operation-row {display:flex;align-items:center;gap:12px;border:1px solid #e7ebf1;border-radius:10px;padding:14px;flex-wrap:wrap;}
+.operation-row>div {flex:1;min-width:200px;}
+.operation-row strong {display:block;font-size:13px;color:#18345f;}
+.operation-row p {font-size:12px;color:#627084;margin:4px 0 0;}
+.operation-row button {background:white;border:1px solid #c5cfdd;border-radius:8px;padding:8px 10px;cursor:pointer;color:#0d2d63;}
+.operation-search {margin-bottom:15px;max-width:480px;}
+@media (max-width:600px){.operation-form{grid-template-columns:1fr;}}

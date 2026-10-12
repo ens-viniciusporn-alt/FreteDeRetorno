@@ -1,0 +1,51 @@
+/* Ajuste específico para elementos da tela de login convertida para React. */
+.login-link-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.login-link-button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.form-error {
+  color: #b42318;
+  font-size: 12px;
+  min-height: 0;
+}
+
+.form-group input[aria-invalid="true"] {
+  border-color: #b42318;
+}
+
+.form-message {
+  display: none;
+}
+
+.form-message.show {
+  display: block;
+  padding: 10px 12px;
+  border-radius: var(--radius-small);
+  font-size: 13px;
+}
+
+.form-message.error {
+  color: #8f1d18;
+  background: #fff0ef;
+  border: 1px solid #ffd2cf;
+}
+
+.form-message.success {
+  color: #176b3a;
+  background: #eaf8ef;
+  border: 1px solid #c7ebd3;
+}
+
+.auth-submit:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}

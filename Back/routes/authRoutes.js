@@ -1,0 +1,10 @@
+const router = require('express').Router();
+const auth = require('../controllers/authController');
+const {required} = require('../middlewares/auth');
+const limit = require('../middlewares/limit');
+router.post('/login',limit({max:12}),auth.login);
+router.get('/me',required,auth.me);
+router.post('/logout',auth.logout);
+router.post('/recuperar-senha',limit({max:5}),auth.requestReset);
+router.post('/redefinir-senha',limit({max:10}),auth.reset);
+module.exports = router;

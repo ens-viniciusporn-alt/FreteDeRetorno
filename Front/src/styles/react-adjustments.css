@@ -1,0 +1,8 @@
+/* Pequenos ajustes para o conteúdo renderizado pelo React. */
+.pagina-em-construcao {
+  min-height: 65vh;
+  padding-top: 150px;
+  padding-bottom: 80px;
+}
+.pagina-em-construcao h1 { color: var(--color-primary); margin: 12px 0 18px; }
+.pagina-em-construcao p:not(.section-label) { margin-bottom: 24px; color: var(--color-text-light); }

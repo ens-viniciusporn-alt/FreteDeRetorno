@@ -1,0 +1,69 @@
+/* Ajustes específicos da tela de cadastro em React. */
+.auth-container-register {
+  align-items: start;
+}
+
+.register-card {
+  min-width: 0;
+}
+
+.profile-option.selected .profile-option-content {
+  border-color: var(--color-primary);
+  background: #f0f5ff;
+}
+
+.profile-option-content {
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-small);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.profile-option input:focus-visible + .profile-option-content {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.optional-label {
+  color: var(--color-text-light);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.password-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-field input {
+  width: 100%;
+  padding-right: 70px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  border: 0;
+  padding: 4px;
+  color: var(--color-primary);
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.password-toggle:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-options {
+    grid-template-columns: 1fr;
+  }
+}

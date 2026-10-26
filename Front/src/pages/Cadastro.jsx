@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import '../styles/auth.css';
 import {api} from '../utils/api';
 import './Cadastro.css';
+import Button from '../components/Button';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -181,8 +182,15 @@ export default function Cadastro() {
               {mensagem && <div className={`form-message show ${tipoMensagem}`} role="alert" aria-live="polite">{mensagem}</div>}
 
               {cadastroConcluido ? (
-                <button type="button" className="btn btn-primary btn-large auth-submit" onClick={() => navigate('/login')}>Ir para o login</button>
-              ) : (
+<Button
+  type="button"
+  variant="primary"
+  size="large"
+  className="auth-submit"
+  onClick={() => navigate('/login')}
+>
+  Ir para o login
+</Button>              ) : (
                 <button type="submit" className="btn btn-primary btn-large auth-submit" disabled={carregando}>
                   {carregando ? 'Criando conta...' : 'Criar minha conta'}
                 </button>

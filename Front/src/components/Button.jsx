@@ -1,9 +1,36 @@
-export default function Button({ children, href, variant = 'primary', size = '', type = 'button', onClick }) {
-  const className = `btn btn-${variant}${size ? ` btn-${size}` : ''}`;
+export default function Button({
+  children,
+  href,
+  variant = 'primary',
+  size = '',
+  type = 'button',
+  onClick,
+  className = '',
+  ...props
+}) {
+  const classes = [
+    'btn',
+    `btn-${variant}`,
+    size && `btn-${size}`,
+    className
+  ].filter(Boolean).join(' ');
 
   if (href) {
-    return <a className={className} href={href} onClick={onClick}>{children}</a>;
+    return (
+      <a className={classes} href={href} onClick={onClick} {...props}>
+        {children}
+      </a>
+    );
   }
 
-  return <button className={className} type={type} onClick={onClick}>{children}</button>;
+  return (
+    <button
+      className={classes}
+      type={type}
+      onClick={onClick}
+      {...props}
+    >
+      {children}
+    </button>
+  );
 }

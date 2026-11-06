@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/auth.css';
-import {useAuth} from '../context/useAuth';
+import { useAuth } from '../context/useAuth';
 import './Login.css';
 
 export default function Login() {
   const navigate = useNavigate();
-  const {entrar}=useAuth();
+  const { entrar } = useAuth();
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [mostrarSenha, setMostrarSenha] = useState(false);
@@ -47,13 +47,19 @@ export default function Login() {
 
     setCarregando(true);
     try {
-      const usuario=await entrar(emailLimpo,senha);
+      const usuario = await entrar(emailLimpo, senha);
       setMensagem('Login realizado com sucesso!');
       setTipoMensagem('success');
-      navigate(usuario.tipo_usuario==='CLIENTE'?'/cliente':'/transportadora',{replace:true});
+      navigate(usuario.tipo_usuario === 'CLIENTE' ? '/cliente' : '/transportadora', { replace: true });
     } catch (error) {
-      console.error('Erro ao conectar com a API:', error);
-      setMensagem('Não foi possível conectar ao servidor. Verifique se o backend está funcionando.');
+      console.error('Erro ao realizar login:', error);
+
+      setMensagem(
+        error.message === 'Failed to fetch'
+          ? 'Não foi possível realizar o login agora. Tente novamente em alguns instantes.'
+          : error.message || 'Não foi possível realizar o login. Tente novamente.'
+      );
+
       setTipoMensagem('error');
     } finally {
       setCarregando(false);
@@ -136,7 +142,7 @@ export default function Login() {
                     aria-invalid={Boolean(erros.senha)}
                     aria-describedby={erros.senha ? 'passwordError' : undefined}
                   />
-                  <button type="button" className="password-toggle" onClick={() => setMostrarSenha(v=>!v)} aria-label={mostrarSenha?'Ocultar senha':'Mostrar senha'}>{mostrarSenha?'Ocultar':'Mostrar'}</button>
+                  <button type="button" className="password-toggle" onClick={() => setMostrarSenha(v => !v)} aria-label={mostrarSenha ? 'Ocultar senha' : 'Mostrar senha'}>{mostrarSenha ? 'Ocultar' : 'Mostrar'}</button>
                 </div>
                 <span className="form-error" id="passwordError">{erros.senha || ''}</span>
               </div>

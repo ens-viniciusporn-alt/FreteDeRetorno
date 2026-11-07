@@ -1,15 +1,13 @@
-# Segredos (em qualquer pasta)
 .env
 .env.*
 !.env.example
 **/.env
 **/.env.*
 !**/.env.example
-# Dependências e compilação
 node_modules/
 dist/
 coverage/
-# Logs, arquivos locais e backups
+/database/
 *.log
 logs/
 *.backup

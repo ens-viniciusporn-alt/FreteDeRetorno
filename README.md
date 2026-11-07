@@ -111,8 +111,6 @@ As pastas principais estão organizadas da seguinte forma:
 FreteDeRetorno/
 ├── Back/          # API e regras do sistema
 ├── Front/         # Telas e componentes React
-├── database/      # Scripts SQL
-├── docs/          # Documentação do projeto
 └── README.md
 ```
 

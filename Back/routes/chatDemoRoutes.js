@@ -1,0 +1,12 @@
+const router=require('express').Router();
+const c=require('../controllers/chatDemoController');
+const {required,role}=require('../middlewares/auth');
+const limiter=require('../middlewares/limit');
+router.use(required);
+router.get('/minhas',c.minhas);
+router.post('/iniciar-carga',role('TRANSPORTADORA'),limiter({windowMs:60000,max:25}),c.iniciarCarga);
+router.post('/iniciar-viagem',role('CLIENTE'),limiter({windowMs:60000,max:25}),c.iniciarViagem);
+router.get('/:id',c.detalhes);
+router.post('/:id/mensagens',limiter({windowMs:60000,max:40}),c.enviar);
+router.post('/:id/proposta',role('TRANSPORTADORA'),limiter({windowMs:60000,max:10}),c.propor);
+module.exports=router;

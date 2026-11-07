@@ -49,3 +49,59 @@
   opacity: 0.7;
   cursor: wait;
 }
+
+
+/* Identidade visual unificada com a página inicial e os painéis. */
+.login-page { background: var(--color-background); }
+.login-page .auth-header { position: sticky; top: 0; z-index: 20; height: 80px; background: rgba(255,255,255,.97); box-shadow: 0 2px 15px rgba(13,45,99,.05); }
+.login-page .auth-header-container { justify-content: space-between; gap: 24px; }
+.login-page .auth-header .brand-name { font-size: 24px; }
+.login-top-nav { display: flex; align-items: center; gap: clamp(12px, 2.4vw, 30px); }
+.login-nav-link { color: var(--color-primary); font-size: 15px; text-decoration: none; font-weight: 500; transition: color .2s; }
+.login-nav-link:hover { color: var(--color-secondary-dark); }
+.login-nav-cta { white-space: nowrap; }
+.login-page .auth-main { padding: clamp(40px, 6vh, 85px) 0; }
+.login-page .auth-container { width: min(calc(100% - 40px), 1200px); grid-template-columns: minmax(0,1.05fr) minmax(380px,.95fr); gap: clamp(40px, 5vw, 90px); }
+.login-page .auth-intro { max-width: 590px; }
+.login-page .auth-intro h1 { font-size: clamp(40px, 4.5vw, 60px); letter-spacing: -1.4px; line-height: 1.08; margin-bottom: 20px; }
+.login-page .auth-intro h1 span { color: var(--color-secondary); }
+.login-page .hero-label { margin-bottom: 18px; }
+.login-page .auth-intro > p { font-size: 17px; line-height: 1.65; margin-bottom: 22px; }
+.login-page .auth-intro-features { flex-direction: row; flex-wrap: wrap; gap: 10px 20px; }
+.login-page .auth-feature { font-size: 13px; }
+.login-page .auth-feature-icon { background: var(--color-secondary-light); color: var(--color-secondary-dark); width: 26px; height: 26px; }
+.login-visual { position: relative; margin-top: 26px; width: min(100%, 490px); height: 190px; overflow: hidden; border-radius: 19px; box-shadow: var(--shadow-medium); }
+.login-visual::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg,rgba(9,35,77,.8),transparent 75%); pointer-events: none; }
+.login-visual img { width: 100%; height: 100%; object-fit: cover; object-position: center 45%; }
+.login-visual-caption { position: absolute; left: 17px; bottom: 15px; z-index: 1; color: #fff; font-size: 13px; font-weight: 700; }
+.login-page .auth-card { border-radius: 22px; border: 1px solid #e1e8f0; padding: clamp(26px, 3.4vw, 44px); box-shadow: 0 16px 45px rgba(13,45,99,.10); }
+.login-page .auth-card-header { margin-bottom: 25px; }
+.login-form-eyebrow { display: block; margin-bottom: 6px; color: var(--color-secondary-dark); text-transform: uppercase; letter-spacing: 1px; font-size: 11px; font-weight: 700; }
+.login-page .auth-card-header h2 { font-size: 30px; }
+.login-page .form-group input:focus { border-color: var(--color-secondary); box-shadow: 0 0 0 3px rgba(243,156,18,.12); }
+.login-page .auth-submit { min-height: 50px; }
+.login-page .auth-footer { border-top: 1px solid var(--color-border); }
+@media (max-width: 960px) {
+  .login-page .auth-container { grid-template-columns: 1fr; max-width: 630px; gap: 30px; }
+  .login-page .auth-intro { max-width: 630px; text-align: left; }
+  .login-page .auth-intro-features { justify-content: flex-start; }
+  .login-visual { display: none; }
+  .login-page .auth-card { margin: 0 auto; }
+}
+@media (max-width: 700px) {
+  .login-page .auth-header { height: 72px; }
+  .login-page .auth-header .brand-name { font-size: 18px; }
+  .login-top-nav .login-nav-link { display: none; }
+  .login-nav-cta { padding: 9px 13px; font-size: 13px; }
+  .login-page .auth-container { width: min(calc(100% - 28px), 520px); }
+  .login-page .auth-main { padding: 30px 0 45px; }
+  .login-page .auth-intro h1 { font-size: clamp(34px, 8vw, 45px); }
+  .login-page .auth-intro > p { font-size: 15px; }
+  .login-page .auth-intro-features { gap: 7px 14px; }
+  .login-page .auth-card { padding: 26px 20px; }
+}
+
+/* Link de recuperação separado dos campos, abaixo da senha. */
+.login-page .login-forgot-row { display:flex; justify-content:flex-end; margin-top:4px; }
+.login-page .login-forgot-row .forgot-password { display:inline-flex; align-items:center; min-height:28px; font-size:13px; font-weight:650; }
+.login-page .login-forgot-row .forgot-password:focus-visible { outline:2px solid #f39c12; outline-offset:3px; border-radius:3px; }

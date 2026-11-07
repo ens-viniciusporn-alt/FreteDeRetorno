@@ -1,9 +1,11 @@
 const Carga=require('../models/Carga');
+const blockContact=require('../utils/blockContact');
 const {text,positiveNumber,positiveId}=require('../utils/validate');
 async function create(req,res,next) {
   try{
     const origem=text(req.body?.origem,120),destino=text(req.body?.destino,120),descricao=text(req.body?.descricao,300),volume=positiveNumber(req.body?.volume_m3);
     if(!origem || origem.length>120 || !destino || destino.length>120 || origem.toLocaleLowerCase('pt-BR')===destino.toLocaleLowerCase('pt-BR') || !descricao || descricao.length>300 || !volume || volume>99999999.99) return res.status(400).json({erro:'Informe origem, destino diferente, descrição e volume (m³) válido.'});
+    if(blockContact(descricao)||blockContact(origem)||blockContact(destino)) return res.status(422).json({erro:'Não informe contatos ou links nas informações da carga. Use o chat da plataforma.'});
     const carga=await Carga.create({origem,destino,descricao,volume_m3:volume,id_cliente:req.usuario.id_usuario});
     res.status(201).json({carga});
   }catch(e){next(e);}

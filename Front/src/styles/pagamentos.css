@@ -1,0 +1,20 @@
+.pag-demo-aviso{border:1px solid #e8b34a;background:#fff7e5;border-radius:14px;padding:18px 22px;margin:0 0 22px;color:#684515;line-height:1.6;font-size:14px}
+.pag-demo-aviso strong{display:block;letter-spacing:.035em;color:#7a3c06}.pag-demo-aviso p{margin:6px 0 0}
+.pag-demo-explicacao{color:#536584;font-size:13px;line-height:1.6;margin-top:0}
+.pag-demo-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:20px}
+.pag-demo-form label{display:flex;flex-direction:column;gap:7px;color:#0d2d63;font-weight:700;font-size:13px}
+.pag-demo-form input,.pag-demo-form select,.pag-demo-form textarea{min-width:0;width:100%;border:1px solid #cbd5e1;border-radius:9px;padding:12px;font:inherit;color:#132b55;background:#fff}
+.pag-demo-form textarea{resize:vertical}.pag-demo-form button{justify-self:start;align-self:end;border:0;cursor:pointer}
+.pag-demo-lista{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:16px}
+.pag-demo-card{border:1px solid #dde6f1;border-radius:14px;padding:18px;background:#fff}
+.pag-demo-titulo{display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;color:#0d2d63}
+.pag-demo-titulo small{display:block;color:#71839a;margin-top:5px}.pag-demo-status{border-radius:20px;background:#eaf0fa;color:#0d2d63;padding:6px 10px;font-size:11px;font-weight:700}
+.pag-demo-garantido_simulado,.pag-demo-liberado_simulado{background:#e7f7eb;color:#166534}.pag-demo-em_disputa{background:#fce8e8;color:#9b1c1c}.pag-demo-cancelado{background:#eee;color:#666}
+.pag-demo-valor{font-size:25px;font-weight:800;color:#0d2d63;margin:15px 0}.pag-demo-valor span{font-size:11px;color:#8b6d36;font-weight:600}
+.pag-demo-acordo{font-size:13px;color:#536584;line-height:1.6}.pag-demo-acoes{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}
+.pag-demo-botao{border:1px solid #f59e0b;border-radius:8px;background:#f59e0b;color:#102b56;padding:9px 12px;font-size:12px;font-weight:750;cursor:pointer}
+.pag-demo-botao:hover{filter:brightness(.96)}.pag-demo-botao:disabled{opacity:.5;cursor:wait}.pag-demo-secundario{background:#fff;color:#0d2d63;border-color:#aabbce}
+.pag-demo-historico{margin-top:14px;padding:12px;background:#f4f7fb;border-radius:8px;font-size:12px;color:#384f71}.pag-demo-historico ol{padding-left:19px;line-height:1.8}
+.pag-demo-sucesso,.pag-demo-erro{padding:12px;border-radius:8px;font-size:13px}.pag-demo-sucesso{background:#e7f7eb;color:#166534}.pag-demo-erro{background:#fff0ef;color:#9b1c1c}
+.pag-demo-passos{line-height:1.8;font-size:14px;color:#384f71;padding-left:24px}
+@media(max-width:700px){.pag-demo-form{grid-template-columns:1fr}.pag-demo-valor{font-size:21px}}

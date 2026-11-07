@@ -1,4 +1,5 @@
 const {Op} = require('sequelize');
+const blockContact=require('../utils/blockContact');
 const Viagem = require('../models/Viagem');
 const {text,positiveNumber,positiveId} = require('../utils/validate');
 const statuses = ['AGENDADA','EM_ANDAMENTO','CONCLUIDA','CANCELADA'];
@@ -17,6 +18,7 @@ async function create(req,res,next) {
   try {
     const input=validate(req.body);
     if(!input || input.data_saida < hojeLocal()) return res.status(400).json({erro:'Confira a rota, data futura, veículo e capacidade (m³).'});
+    if([input.origem,input.destino,input.veiculo].some(blockContact)) return res.status(422).json({erro:'Não informe contatos ou links nos dados da viagem.'});
     const viagem=await Viagem.create({...input,id_transportador:req.usuario.id_usuario});
     res.status(201).json({viagem});
   }catch(e){next(e);}

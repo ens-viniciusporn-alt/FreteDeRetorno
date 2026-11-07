@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Sidebar from './Sidebar';
-import NotificationPanel from './NotificationPanel';
+import CentralNotificacoes from '../CentralNotificacoes';
 
 export default function DashboardLayout({ tipo, nome, children }) {
   const [menuAberto, setMenuAberto] = useState(false);
@@ -38,7 +38,7 @@ export default function DashboardLayout({ tipo, nome, children }) {
           </div>
 
           <div className="dashboard-topbar-user">
-            <NotificationPanel />
+            <CentralNotificacoes />
 
             <span className="topbar-avatar">
               {cliente

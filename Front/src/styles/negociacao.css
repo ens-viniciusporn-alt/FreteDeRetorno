@@ -1,0 +1,55 @@
+.neg-filtros .dashboard-panel-heading>span{color:#6b7890;font-size:13px}
+.neg-filtros-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.neg-filtros-grid label,.neg-oferta-acoes label,.neg-proposta label{display:flex;flex-direction:column;gap:6px;font-weight:650;color:#153360;font-size:13px}
+.neg-filtros input,.neg-filtros select,.neg-oferta select,.neg-chat-lista input,.neg-escrever textarea,.neg-proposta input,.neg-proposta select,.neg-proposta textarea{font:inherit;font-weight:400;min-width:0;width:100%;box-sizing:border-box;border:1px solid #d2dbea;border-radius:9px;padding:11px;background:#fff;color:#13315b}
+.neg-filtros input:focus-visible,.neg-filtros select:focus-visible,.neg-chat-lista input:focus-visible,.neg-oferta select:focus-visible,.neg-escrever textarea:focus-visible,.neg-proposta input:focus-visible,.neg-proposta select:focus-visible,.neg-proposta textarea:focus-visible{outline:2px solid #f59a0b;outline-offset:2px}
+.neg-link{border:0;background:transparent;color:#ad6100;font-size:13px;cursor:pointer;margin-top:12px;padding:4px}
+.neg-lista{display:flex;flex-direction:column;gap:12px}
+.neg-oferta{display:flex;justify-content:space-between;gap:24px;padding:20px 18px;border:1px solid #dfe6f0;border-radius:14px;background:white}
+.neg-oferta-info{flex:1;min-width:0}.neg-oferta h3{font-size:17px;color:#0d2d63;margin:10px 0}.neg-oferta h3 span{color:#f49a0c}.neg-oferta p{font-size:13px;color:#596b84;margin:0 0 9px}.neg-oferta small{color:#516480}
+.neg-oferta-topo{display:flex;gap:8px;flex-wrap:wrap}.neg-tag{display:inline-flex;font-size:10px;font-weight:750;letter-spacing:.045em;background:#fff2de;color:#945508;border-radius:20px;padding:5px 8px}.neg-tag-verde{background:#e3f5ea;color:#1c7644}
+.neg-oferta-acoes{min-width:260px;max-width:320px;display:flex;flex-direction:column;justify-content:center;gap:12px}.neg-oferta-acoes button{cursor:pointer}.neg-oferta-acoes button:disabled{opacity:.5;cursor:not-allowed}
+.neg-alerta{border:1px solid #ffb8b8;background:#fff2f2;border-radius:10px;padding:12px 15px;color:#8f1717;font-size:13px;margin:12px 0}.neg-aviso{border-color:#f4c468;background:#fff8e8;color:#7a4508}.neg-sucesso{padding:12px;border:1px solid #b1dcca;background:#ecfaf2;border-radius:10px;color:#166339;font-size:13px}
+.neg-chat-layout{display:grid;grid-template-columns:minmax(220px,320px) minmax(0,1fr);gap:16px;align-items:stretch;min-height:620px}
+.neg-chat-lista,.neg-chat-principal{background:white;border:1px solid #e2e8f2;border-radius:15px;overflow:hidden}
+.neg-chat-lista{padding:16px;display:flex;flex-direction:column;gap:12px}.neg-chat-lista h2{font-size:17px;margin:0;color:#102f63}.neg-chat-lista p{color:#6b7890;font-size:13px}
+.neg-chat-item{border:1px solid #e6eaf2;border-radius:10px;background:#fff;display:flex;flex-direction:column;gap:5px;padding:13px;text-align:left;cursor:pointer;color:#173660}
+.neg-chat-item.ativo{border-color:#f39b0c;background:#fff6e6}.neg-chat-item strong{font-size:14px}.neg-chat-item span,.neg-chat-item small{font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}.neg-chat-item small{color:#728199}
+.neg-chat-principal{display:flex;flex-direction:column}.neg-chat-cabecalho{display:flex;justify-content:space-between;gap:14px;padding:18px 20px;border-bottom:1px solid #e3e9f2;align-items:center}.neg-chat-cabecalho div{display:flex;flex-direction:column;gap:4px}.neg-chat-cabecalho strong{font-size:16px;color:#122f61}.neg-chat-cabecalho span{font-size:12px;color:#677893}
+.neg-mensagens{height:310px;overflow-y:auto;background:#f8faff;padding:18px;display:flex;flex-direction:column;align-items:flex-start;gap:11px}.neg-vazio{margin:auto;color:#70819b;font-size:13px}
+.neg-balao{max-width:min(80%,540px);padding:12px 15px;border:1px solid #e1e7f1;background:#fff;border-radius:14px 14px 14px 3px;overflow-wrap:anywhere}
+.neg-balao.minha{align-self:flex-end;border-color:#f5d8a4;background:#fff3e1;border-radius:14px 14px 3px 14px}
+.neg-balao p{font-size:14px;white-space:pre-wrap;color:#19345d;margin:0 0 5px}.neg-balao small{color:#78869a;font-size:10px}
+.neg-escrever{padding:15px 18px;border-top:1px solid #e2e8f2}.neg-escrever label{font-size:12px;color:#173660;font-weight:700;display:block;margin-bottom:7px}.neg-escrever textarea{resize:vertical}.neg-escrever>div{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:9px}.neg-escrever small{color:#70819b;font-size:11px}.neg-escrever button:disabled{opacity:.55}
+.neg-acordo{padding:20px;border-top:1px solid #e2e8f2}.neg-acordo h3{font-size:16px;color:#123160;margin:0 0 9px}.neg-acordo p{font-size:13px;color:#516580;line-height:1.5}
+.neg-proposta{display:grid;gap:13px}.neg-proposta button{justify-self:start}.neg-resumo{background:#f7f9fd;border:1px solid #dce5ef;border-radius:12px;padding:16px}.neg-resumo>strong{color:#0e3469}.neg-resumo-linhas{display:grid;gap:8px;padding:13px 0}.neg-resumo-linhas>span{display:flex;justify-content:space-between;gap:12px;font-size:13px}.neg-nota{padding:10px;background:#fff8e6;border-radius:8px}.neg-acoes{display:flex;flex-wrap:wrap;gap:8px}.neg-acoes button{background:#f59a0c;color:#082a58;border:0;border-radius:8px;padding:11px 14px;cursor:pointer;font-weight:700}.neg-chat-sem-selecao{margin:auto;text-align:center;padding:30px;color:#5b6f87}.neg-chat-sem-selecao h2{color:#133260}
+@media(max-width:1080px){.neg-filtros-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.neg-chat-layout{grid-template-columns:260px minmax(0,1fr)}}
+@media(max-width:740px){.neg-filtros-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.neg-oferta{flex-direction:column}.neg-oferta-acoes{max-width:none;min-width:0}.neg-chat-layout{grid-template-columns:1fr}.neg-chat-lista{max-height:250px;overflow-y:auto}.neg-mensagens{height:280px}}
+@media(max-width:460px){.neg-filtros-grid{grid-template-columns:1fr}.neg-escrever>div{align-items:flex-start;flex-direction:column}}
+
+/* Contratação orientada pelo chat — identidade visual Frete de Retorno */
+.neg-sim-badge{border:1px solid #f4d193;background:#fff6e8;color:#85510b;border-radius:12px;padding:12px 16px;font-size:13px;margin:14px 0 18px}
+.neg-v2-layout{display:grid;grid-template-columns:245px minmax(0,1fr);gap:16px;align-items:start}
+.neg-v2-conteudo{display:grid;grid-template-columns:minmax(300px,1fr) minmax(340px,1.05fr);gap:16px;align-items:start}
+.neg-v2-mensagens,.neg-v2-card{border:1px solid #e1e7f0;border-radius:16px;background:#fff;box-shadow:0 8px 28px rgba(17,48,91,.03)}
+.neg-v2-mensagens{overflow:hidden}.neg-v2-contratos{display:flex;flex-direction:column;gap:14px}
+.neg-v2-card{padding:18px}.neg-v2-card h2{font-size:17px;color:#10305f;margin:0 0 10px}.neg-v2-card>p{font-size:13px;line-height:1.5;color:#5b6e86}
+.neg-v2-card .neg-proposta{margin-top:14px}
+.neg-v2-card .dashboard-primary-button{width:100%;justify-content:center}
+.neg-v2-termos{display:flex;flex-direction:column;gap:12px;margin-top:14px}.neg-v2-termos label{display:flex;align-items:flex-start;gap:10px;line-height:1.4;font-size:13px;color:#173764}.neg-v2-termos input{margin-top:2px;accent-color:#f39a0d;flex:none}.neg-v2-termos a{color:#0d50a4;text-decoration:underline}
+.neg-status-linha{background:#fff4e0;color:#865109!important;border-radius:8px;padding:10px}
+.neg-dados{display:grid;grid-template-columns:1fr 1fr;gap:10px}.neg-dados span{font-size:11px;color:#60728b;display:flex;flex-direction:column;gap:5px;background:#f7f9fc;padding:11px;border-radius:8px;min-width:0;overflow-wrap:anywhere}.neg-dados b{font-size:13px;color:#102f61}
+.neg-msg-seguranca{font-size:12px;color:#99600c;background:#fff5e3;padding:9px 10px;border-radius:8px;line-height:1.4}
+.neg-metodos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:13px 0}.neg-metodos button{background:#fff;border:1px solid #d7e1ee;border-radius:9px;padding:12px 8px;cursor:pointer;color:#173660;font-weight:650}.neg-metodos button.ativo{border-color:#f59e0b;background:#fff4e1;color:#a86108}
+.neg-v2-pagamento{background:#f7f9fd;border:1px solid #e4e9f2;border-radius:10px;padding:14px;margin-bottom:12px;color:#193660;font-size:13px}.neg-v2-pagamento p{line-height:1.5}.neg-v2-pagamento code{display:block;color:#9b5c04;padding:9px;background:#fff;border-radius:7px;overflow-wrap:anywhere}
+.neg-acao-secundaria{margin:8px 8px 0 0;padding:10px 12px;background:#fff;color:#173660;border:1px solid #d0dced;border-radius:8px;cursor:pointer}.neg-acao-secundaria:hover{background:#f4f7fc}
+@media(max-width:1450px){.neg-v2-layout{grid-template-columns:225px minmax(0,1fr)}.neg-v2-conteudo{grid-template-columns:1fr}}
+@media(max-width:850px){.neg-v2-layout{grid-template-columns:1fr}.neg-chat-lista{max-height:250px;overflow:auto}}
+@media(max-width:460px){.neg-dados{grid-template-columns:1fr}.neg-metodos{grid-template-columns:1fr 1fr}}
+
+.neg-v2-sumarios{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:17px}
+.neg-v2-sumarios>div{display:flex;flex-direction:column;background:#fff;border:1px solid #e3e9f1;border-radius:14px;padding:18px;gap:5px;box-shadow:0 6px 25px rgba(14,44,86,.04)}
+.neg-v2-sumarios strong{font-size:28px;color:#0e3061}.neg-v2-sumarios span{font-size:13px;color:#62758e}
+.neg-v2-atalhos{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:16px}.neg-v2-atalhos button{background:#fff;border:1px solid #dbe3ef;padding:9px 13px;border-radius:30px;cursor:pointer;color:#163566;font-weight:600}.neg-v2-atalhos button.ativo{background:#fff1d8;border-color:#f5ba55;color:#955807}
+.neg-v2-oferta-segura{display:inline-flex;background:#eef5ff;color:#23568c!important;font-size:12px!important;padding:6px 10px;border-radius:7px}
+@media(max-width:650px){.neg-v2-sumarios{grid-template-columns:1fr}}

@@ -27,9 +27,26 @@ async function atualizarMe(req,res,next) {
   try {
     const nome = text(req.body?.nome,100);
     if (!nome || nome.length > 100) return res.status(400).json({erro:'Informe um nome de até 100 caracteres.'});
+    // A atualização do telefone é opcional para manter compatibilidade com clientes antigos.
+    const atualizarTelefone = Object.prototype.hasOwnProperty.call(req.body || {}, 'telefone');
+    let telefone = req.usuario.telefone;
+    if (atualizarTelefone) {
+      if (typeof req.body.telefone !== 'string' && req.body.telefone !== null) {
+        return res.status(400).json({erro:'Informe um telefone válido.'});
+      }
+      telefone = req.body.telefone === null ? null : req.body.telefone.trim();
+      if (telefone === '') telefone = null;
+      if (telefone !== null) {
+        const digitos = telefone.replace(/\D/g, '');
+        if (telefone.length > 20 || !/^[+()\d\s.-]+$/.test(telefone) || digitos.length < 10 || digitos.length > 13) {
+          return res.status(400).json({erro:'Informe um telefone válido com DDD (10 ou 11 dígitos; com +55 também é aceito).'});
+        }
+      }
+    }
     req.usuario.nome = nome;
+    if (atualizarTelefone) req.usuario.telefone = telefone;
     await req.usuario.save();
-    res.json({mensagem:'Nome atualizado com sucesso.',usuario:publicUser(req.usuario)});
+    res.json({mensagem:'Dados atualizados com sucesso.',usuario:publicUser(req.usuario)});
   } catch(error){next(error);}
 }
 module.exports = {inserir,atualizarMe};

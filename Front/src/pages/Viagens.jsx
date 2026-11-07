@@ -14,7 +14,7 @@ export default function Viagens(){
     return ()=>{active=false;};
   },[]);
   useEffect(()=>{if(location.hash==='#nova')document.getElementById('nova')?.scrollIntoView({behavior:'smooth'});},[location.hash]);
-  async function salvar(e){e.preventDefault();setMensagem('');try{await api('/viagens',{method:'POST',body:form});setForm(initial);setMensagem('Viagem salva no Neon.');await carregar();}catch(error){setMensagem(error.message);}}
+  async function salvar(e){e.preventDefault();setMensagem('');try{await api('/viagens',{method:'POST',body:form});setForm(initial);setMensagem('Viagem cadastrada com sucesso.');await carregar();}catch(error){setMensagem(error.message);}}
   async function atualizar(id,status){try{await api(`/viagens/${id}/status`,{method:'PATCH',body:{status}});await carregar();}catch(error){setMensagem(error.message);}}
   return <DashboardLayout tipo="transportadora" nome={usuario.nome}><section className="dashboard-page-heading"><div><span className="dashboard-eyebrow">PLANEJAMENTO</span><h1>Minhas viagens</h1><p>Rotas, veículos e capacidade disponíveis.</p></div></section>
     <section className="dashboard-panel" id="nova"><div className="dashboard-panel-heading"><h2>＋ Cadastrar viagem</h2></div><form className="operation-form" onSubmit={salvar}>

@@ -505,3 +505,89 @@
     padding: 13px;
   }
 }
+
+
+/* ============================================================
+   FRETE DE RETORNO — IDENTIDADE VISUAL UNIFICADA (HOME + PAINEL)
+   Somente aparencia: preserva links, rotas, estados e API.
+   Compartilhado pelas areas de cliente e transportadora.
+   ============================================================ */
+.dashboard-app {
+  background: #f5f7fa;
+  color: #102f60;
+}
+/* Menu claro como o cabecalho da pagina inicial. */
+.dashboard-sidebar {
+  background: #fff;
+  border-right: 1px solid #e3e8f0;
+  box-shadow: 4px 0 24px rgba(13,45,99,.045);
+}
+.dashboard-brand-row { background:#fff; border-bottom-color:#e7ebf1; }
+.dashboard-brand { color:#0d2d63; font-size:16px; letter-spacing:-.15px; }
+.dashboard-brand-icon { background:#fff0d7; color:#0d2d63; }
+.dashboard-sidebar .sidebar-close { color:#0d2d63; }
+.dashboard-user { background:#f5f7fb; border-color:#e5eaf2; }
+.dashboard-avatar { background:#f39c12; color:#0d2d63; }
+.dashboard-user-info strong { color:#0d2d63; }
+.dashboard-user-info span { color:#66758d; }
+.dashboard-nav-title { color:#8493a9; }
+.dashboard-nav-item { color:#405878; border-left:3px solid transparent; }
+.dashboard-nav-item:hover { background:#f5f7fc; color:#0d2d63; }
+.dashboard-nav-item.ativo { background:#fff4df; border-left-color:#f39c12; color:#0d2d63; font-weight:800; }
+.dashboard-nav-item.ativo .dashboard-nav-icon { color:#d88300; }
+.dashboard-sidebar-footer { border-top-color:#e7ebf1; }
+.dashboard-sidebar .dashboard-nav-item:focus-visible,
+.dashboard-sidebar .dashboard-brand:focus-visible,
+.dashboard-sidebar .sidebar-close:focus-visible { outline-color:#f39c12; }
+.dashboard-topbar {
+  min-height:78px;
+  border-bottom:1px solid #e8ebf1;
+  box-shadow: 0 3px 15px rgba(13,45,99,.035);
+}
+.dashboard-breadcrumb strong { color:#0d2d63; }
+.dashboard-topbar-user { color:#0d2d63; }
+.dashboard-content { padding-top:30px; }
+/* Faixa de boas-vindas inspirada no hero da home. */
+.dashboard-page-heading {
+  position:relative; overflow:hidden; isolation:isolate;
+  padding:29px 30px;
+  margin-bottom:22px;
+  background:linear-gradient(110deg,#fff 0%,#f8faff 65%,#fff3db 100%);
+  border:1px solid #e6eaf1;
+  border-radius:20px;
+  box-shadow:0 8px 28px rgba(13,45,99,.045);
+}
+.dashboard-page-heading::after {
+  content:'↗'; position:absolute; z-index:-1; right:25%; top:-62px;
+  color:rgba(243,156,18,.10); font-size:190px; font-weight:900;
+  line-height:1; pointer-events:none;
+}
+.dashboard-eyebrow { color:#dc8700; font-size:11px; letter-spacing:1.2px; }
+.dashboard-page-heading h1 { color:#0d2d63; font-size:clamp(26px,2.6vw,34px); letter-spacing:-.6px; }
+.dashboard-page-heading p { color:#60718b; font-size:14px; }
+.dashboard-primary-button {
+  background:#f39c12; color:#0d2d63;
+  box-shadow:0 7px 18px rgba(243,156,18,.18);
+  font-size:13px; font-weight:800;
+}
+.dashboard-primary-button:hover { background:#e58f05; color:#0d2d63; }
+.dashboard-outline-button { border-color:#0d2d63; color:#0d2d63; }
+.dashboard-panel,.stat-card { border-color:#e3e8f0; box-shadow:0 7px 22px rgba(13,45,99,.04); }
+.dashboard-panel { border-radius:18px; }
+.stat-card { border-radius:15px; }
+.dashboard-panel-heading h2 { color:#0d2d63; }
+.quick-action-card { border-color:#e3e8f0; background:linear-gradient(145deg,#fff 0%,#fbfcff 100%); border-radius:14px; }
+.quick-action-card:hover { border-color:#f0b65c; box-shadow:0 9px 22px rgba(13,45,99,.07); }
+.quick-action-card strong { color:#0d2d63; }
+.dashboard-text-link:hover,.dashboard-footer a:hover { color:#d88300; }
+/* Barras de navegacao mobile permanecem funcionais. */
+@media (max-width:900px) {
+  .dashboard-sidebar { box-shadow:12px 0 40px rgba(9,35,77,.14); }
+}
+@media (max-width:600px) {
+  .dashboard-topbar { min-height:66px; }
+  .dashboard-page-heading { padding:21px 17px; border-radius:16px; gap:15px; }
+  .dashboard-page-heading::after { right:-22px; top:-38px; font-size:150px; }
+  .dashboard-page-heading h1 { font-size:25px; }
+  .dashboard-page-heading p { font-size:12px; }
+}

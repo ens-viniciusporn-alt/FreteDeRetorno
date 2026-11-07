@@ -6,6 +6,10 @@ const authRoutes = require('./routes/authRoutes');
 const usuarioRoutes = require('./routes/usuarioRoutes');
 const viagemRoutes = require('./routes/viagemRoutes');
 const cargaRoutes = require('./routes/cargaRoutes');
+const pagamentoDemoRoutes = require('./routes/pagamentoDemoRoutes');
+const chatDemoRoutes = require('./routes/chatDemoRoutes');
+const disputaDemoRoutes = require('./routes/disputaDemoRoutes');
+const notificacoesRoutes = require('./routes/notificacoesRoutes');
 const app = express();
 const port = Number(process.env.PORT || 3000);
 const origins = (process.env.FRONTEND_ORIGINS || 'http://localhost:5173').split(',').map(s=>s.trim()).filter(Boolean);
@@ -22,11 +26,15 @@ app.use((req,res,next)=>{
   }
   next();
 });
+app.use('/api/disputas-demo', disputaDemoRoutes);
 app.get('/api/health', (_req,res)=>res.json({status:'ok'}));
 app.use('/api/auth',authRoutes);
 app.use('/api/usuarios',usuarioRoutes);
+app.use('/api/notificacoes', notificacoesRoutes);
 app.use('/api/viagens',viagemRoutes);
 app.use('/api/cargas',cargaRoutes);
+app.use('/api/pagamentos-demo',pagamentoDemoRoutes);
+app.use('/api/chats-demo',chatDemoRoutes);
 app.use((_req,res)=>res.status(404).json({erro:'Rota não encontrada.'}));
 app.use((error,_req,res,_next)=>{
   console.error('Erro na API:',error.message);

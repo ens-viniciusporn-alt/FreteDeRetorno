@@ -3,11 +3,11 @@ import {useAuth} from '../../context/useAuth';
 const menus={
   cliente:[
     {titulo:'Principal',itens:[['⌂','Dashboard','/cliente'],['▣','Minhas cargas','/cliente/cargas'],['＋','Nova carga','/cliente/cargas#nova'],['◉','Encontrar transporte','/cliente/transporte']]},
-    {titulo:'Conta',itens:[['⚙','Configurações','/cliente/configuracoes'],['☏','Suporte','/cliente/suporte']]}
+    {titulo:'Conta',itens:[['⚙','Configurações','/cliente/configuracoes'],['☏','Suporte','/cliente/suporte'],['✉','Conversas','/cliente/chats'],['▤','Meus contratos','/cliente/contratos']]}
   ],
   transportadora:[
     {titulo:'Principal',itens:[['⌂','Visão geral','/transportadora'],['🛣','Minhas viagens','/transportadora/viagens'],['＋','Cadastrar viagem','/transportadora/viagens#nova'],['▣','Cargas disponíveis','/transportadora/cargas']]},
-    {titulo:'Conta',itens:[['⚙','Configurações','/transportadora/configuracoes'],['$','Pagamentos','/transportadora/pagamentos']]}
+    {titulo:'Conta',itens:[['⚙','Configurações','/transportadora/configuracoes'],['✉','Conversas','/transportadora/chats'],['▤','Meus contratos','/transportadora/contratos']]}
   ]
 };
 export default function Sidebar({tipo,nome,aberta,aoFechar}) {

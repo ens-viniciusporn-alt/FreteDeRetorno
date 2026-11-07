@@ -50,16 +50,21 @@ export default function Login() {
       const usuario = await entrar(emailLimpo, senha);
       setMensagem('Login realizado com sucesso!');
       setTipoMensagem('success');
-      navigate(usuario.tipo_usuario === 'CLIENTE' ? '/cliente' : '/transportadora', { replace: true });
+      navigate(
+        usuario.tipo_usuario === 'ADMIN'
+          ? '/admin/disputas'
+          : usuario.tipo_usuario === 'CLIENTE'
+            ? '/cliente'
+            : '/transportadora',
+        { replace: true }
+      );
     } catch (error) {
       console.error('Erro ao realizar login:', error);
-
       setMensagem(
         error.message === 'Failed to fetch'
           ? 'Não foi possível realizar o login agora. Tente novamente em alguns instantes.'
           : error.message || 'Não foi possível realizar o login. Tente novamente.'
       );
-
       setTipoMensagem('error');
     } finally {
       setCarregando(false);
@@ -67,24 +72,30 @@ export default function Login() {
   }
 
   return (
-    <div className="auth-page">
+    <div className="auth-page login-page">
       <header className="auth-header">
         <div className="container auth-header-container">
           <Link to="/" className="brand" aria-label="Frete de Retorno - Início">
             <div className="brand-logo" aria-hidden="true">🚚</div>
             <span className="brand-name">Frete de Retorno</span>
           </Link>
+          <nav className="login-top-nav" aria-label="Navegação principal">
+            <Link to="/" className="login-nav-link">Início</Link>
+            <Link to="/#como-funciona" className="login-nav-link">Como funciona</Link>
+            <Link to="/#beneficios" className="login-nav-link">Benefícios</Link>
+            <Link to="/cadastro" className="btn btn-primary login-nav-cta">Criar conta</Link>
+          </nav>
         </div>
       </header>
 
       <main className="auth-main">
         <div className="auth-container">
           <section className="auth-intro">
-            <span className="section-label">Bem-vindo de volta</span>
-            <h1>Transporte de forma mais inteligente.</h1>
+            <span className="hero-label">Transporte inteligente</span>
+            <h1>Encontre espaço.<br /><span>Reduza custos.</span><br />Transporte melhor.</h1>
             <p>
-              Acesse sua conta para acompanhar suas cargas, encontrar oportunidades
-              de transporte e gerenciar suas operações.
+              Que bom ter você de volta! Acesse sua conta para acompanhar suas cargas,
+              encontrar viagens disponíveis e continuar suas operações.
             </p>
             <div className="auth-intro-features">
               <div className="auth-feature">
@@ -100,12 +111,17 @@ export default function Login() {
                 <span>Tenha suas informações organizadas</span>
               </div>
             </div>
+            <div className="login-visual" aria-label="Transporte rodoviário e aproveitamento de rotas">
+              <img src="/assets/images/img1.jpg" alt="Caminhão, símbolo da plataforma Frete de Retorno" />
+              <span className="login-visual-caption">🚚 Conectando cargas e oportunidades</span>
+            </div>
           </section>
 
           <section className="auth-card">
             <div className="auth-card-header">
-              <h2>Entrar</h2>
-              <p>Acesse sua conta para continuar.</p>
+              <span className="login-form-eyebrow">Área de acesso</span>
+              <h2>Bem-vindo de volta!</h2>
+              <p>Entre com seus dados para continuar.</p>
             </div>
 
             <form id="loginForm" className="auth-form" noValidate onSubmit={handleSubmit}>
@@ -126,10 +142,7 @@ export default function Login() {
               </div>
 
               <div className="form-group">
-                <div className="form-label-row">
-                  <label htmlFor="password">Senha</label>
-                  <Link to="/recuperar-senha" className="forgot-password login-link-button">Esqueci minha senha</Link>
-                </div>
+                <label htmlFor="password">Senha</label>
                 <div className="password-wrapper">
                   <input
                     type={mostrarSenha ? 'text' : 'password'}
@@ -145,6 +158,9 @@ export default function Login() {
                   <button type="button" className="password-toggle" onClick={() => setMostrarSenha(v => !v)} aria-label={mostrarSenha ? 'Ocultar senha' : 'Mostrar senha'}>{mostrarSenha ? 'Ocultar' : 'Mostrar'}</button>
                 </div>
                 <span className="form-error" id="passwordError">{erros.senha || ''}</span>
+                <div className="login-forgot-row">
+                  <Link to="/recuperar-senha" className="forgot-password login-link-button">Esqueci minha senha?</Link>
+                </div>
               </div>
 
 
